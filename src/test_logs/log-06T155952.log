@@ -1,0 +1,7 @@
+2357 [Test worker] INFO  com.imker.tests.TestBase -- Start test loginPositiveTest with data: []
+3551 [Test worker] INFO  com.imker.tests.TestBase -- PASSED: loginPositiveTest
+3552 [Test worker] INFO  com.imker.tests.TestBase -- ========================================================
+3558 [Test worker] INFO  com.imker.tests.TestBase -- Start test loginNegativeWithoutPasswordTest with data: []
+19732 [Test worker] INFO  com.imker.tests.TestBase -- PASSED: loginNegativeWithoutPasswordTest
+19732 [Test worker] INFO  com.imker.tests.TestBase -- ========================================================
+19733 [Test worker] INFO  com.imker.tests.TestBase -- Start test loginNegativeWithoutEmailTest with data: []

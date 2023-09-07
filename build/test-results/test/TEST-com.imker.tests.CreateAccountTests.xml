@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.imker.tests.CreateAccountTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-06T18:32:36" hostname="SASHA-LENOVO" time="1.68">
+  <properties/>
+  <testcase name="NewUserRegistrationRequiredFieldsMistakePasswordNegativeTest" classname="com.imker.tests.CreateAccountTests" time="1.68"/>
+  <system-out><![CDATA[20:32:36.093 [Test worker] INFO  com.imker.tests.TestBase -- Start test NewUserRegistrationRequiredFieldsMistakePasswordNegativeTest with data: []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

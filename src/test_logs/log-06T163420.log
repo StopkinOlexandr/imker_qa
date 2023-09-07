@@ -1,0 +1,7 @@
+2494 [Test worker] INFO  com.imker.tests.TestBase -- Start test loginPositiveTest with data: []
+3763 [Test worker] INFO  com.imker.tests.TestBase -- Start test loginNegativeWithoutPasswordTest with data: []
+10031 [Test worker] INFO  com.imker.tests.TestBase -- Start test loginNegativeWithoutEmailAndPasswordTest with data: []
+10169 [Test worker] INFO  com.imker.tests.TestBase -- Start test loginNegativeWrongEmail with data: []
+10845 [Test worker] INFO  com.imker.tests.TestBase -- Start test loginNegativeWrongPassword with data: []
+11479 [Test worker] INFO  com.imker.tests.TestBase -- Start test loginNegativeSqlInEmail with data: []
+12155 [Test worker] INFO  com.imker.tests.TestBase -- Start test loginNegativeSqlInPassword with data: []
