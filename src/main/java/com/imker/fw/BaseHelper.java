@@ -22,8 +22,6 @@ public class BaseHelper {
     this.driver = driver;
   }
 
-
-
   public boolean isElementPresent(By locator) {
     try {
       driver.findElement(locator);

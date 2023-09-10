@@ -17,11 +17,9 @@ public class LoginTests extends TestBase {
     }
   }
 
-
   @Test(priority = 1)
-  public void loginPositiveTest() {
+  public void loginAdminPositiveTest() {
     app.getUser().clickOnLoginLink();
-
     app.getUser().fillLoginForm(User.builder()
         .email("boss@gmail.com")
         .password("!Boss12345")
@@ -30,6 +28,27 @@ public class LoginTests extends TestBase {
     Assert.assertTrue(app.getUser().isSignOutButtonPresent());
   }
 
+  @Test(priority = 1)
+  public void loginMemberPositiveTest() {
+    app.getUser().clickOnLoginLink();
+    app.getUser().fillLoginForm(User.builder()
+        .email("member@gmail.com")
+        .password("!Boss12345")
+        .build());
+    app.getUser().clickOnLoginButton();
+    Assert.assertTrue(app.getUser().isSignOutButtonPresent());
+  }
+
+  @Test(priority = 1)
+  public void loginUserPositiveTest() {
+    app.getUser().clickOnLoginLink();
+    app.getUser().fillLoginForm(User.builder()
+        .email("user@gmail.com")
+        .password("!Boss12345")
+        .build());
+    app.getUser().clickOnLoginButton();
+    Assert.assertTrue(app.getUser().isSignOutButtonPresent());
+  }
   @Test(priority = 2)
   public void loginNegativeWithoutPasswordTest() {
     if (!app.getUser().isLoginLinkPresent()) {
@@ -41,9 +60,8 @@ public class LoginTests extends TestBase {
         .build());
     app.getUser().clickOnLoginButton();
     Assert.assertTrue(
-        app.getUser().isElementPresent(By.xpath("//div[text()=\"Password is required\"]")));
+        app.getUser().isElementPresent(By.xpath("//div[text()='Password is required']")));
   }
-
 
   @Test(priority = 3)
   public void loginNegativeWithoutEmailAndPasswordTest() {

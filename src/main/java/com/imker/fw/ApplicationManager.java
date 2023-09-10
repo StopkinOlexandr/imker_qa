@@ -4,7 +4,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.time.Duration;
 
 public class ApplicationManager {
@@ -15,6 +14,13 @@ public class ApplicationManager {
   UserHelper user;
   ContactHelper contact;
   HomePageHelper homePage;
+  BlogPageHelper blogPage;
+  AboutUsPegeHelper aboutUsPage;
+  AdminPageHelper adminPage;
+  ContactPageHelper contactPage;
+  GalleryPageHelper galleryPage;
+  PostsPageHelper postsPage;
+  EventsPageHelper eventsPage;
 
   public ApplicationManager(String browser) {
     this.browser = browser;
@@ -24,13 +30,24 @@ public class ApplicationManager {
     return user;
   }
 
-  public ContactHelper getContact() {
-    return contact;
+  public ContactPageHelper getContact() {
+    return contactPage;
   }
 
   public HomePageHelper getHomePage() {
     return homePage;
   }
+
+  public BlogPageHelper getBlogPage() {
+    return blogPage;
+  }
+
+  public PostsPageHelper getPostsPage() { return postsPage; }
+
+  public EventsPageHelper getEventsPage() { return eventsPage; }
+
+  public GalleryPageHelper getGalleryPage() { return galleryPage; }
+
 
   public void init() {
     System.err.close();
@@ -53,6 +70,11 @@ public class ApplicationManager {
     user = new UserHelper(driver);
     contact = new ContactHelper(driver);
     homePage = new HomePageHelper(driver);
+    blogPage = new BlogPageHelper(driver);
+    postsPage = new PostsPageHelper(driver);
+    eventsPage = new EventsPageHelper(driver);
+    galleryPage = new GalleryPageHelper(driver);
+
   }
 
   public void stop() {
