@@ -22,9 +22,8 @@ public class GalerryPageTests extends TestBase{
   @Test
   public void openImageTest() {
     app.getGalleryPage().clickOnGalleryLink();
-//    app.getGalleryPage().clickOnImageLink();
-    Assert.assertTrue(app.getGalleryPage().isGalleryBannerPresent());
+    app.getGalleryPage().clickOnImageLink();
+    Assert.assertTrue(app.getGalleryPage().isImagePresent());
+    app.getGalleryPage().clickOutsideImageLink();
   }
-
-
 }

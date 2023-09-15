@@ -28,7 +28,7 @@ public class LoginTests extends TestBase {
     Assert.assertTrue(app.getUser().isSignOutButtonPresent());
   }
 
-  @Test(priority = 1)
+  @Test(priority = 2)
   public void loginMemberPositiveTest() {
     app.getUser().clickOnLoginLink();
     app.getUser().fillLoginForm(User.builder()
@@ -39,7 +39,7 @@ public class LoginTests extends TestBase {
     Assert.assertTrue(app.getUser().isSignOutButtonPresent());
   }
 
-  @Test(priority = 1)
+  @Test(priority = 3)
   public void loginUserPositiveTest() {
     app.getUser().clickOnLoginLink();
     app.getUser().fillLoginForm(User.builder()
@@ -49,68 +49,74 @@ public class LoginTests extends TestBase {
     app.getUser().clickOnLoginButton();
     Assert.assertTrue(app.getUser().isSignOutButtonPresent());
   }
-  @Test(priority = 2)
+  @Test(priority = 4)
   public void loginNegativeWithoutPasswordTest() {
-    if (!app.getUser().isLoginLinkPresent()) {
-      app.getUser().clickOnSignOutButton();
-    }
+//    if (!app.getUser().isLoginLinkPresent()) {
+//      app.getUser().clickOnSignOutButton();
+//    }
+    app.getUser().ReloadPage();
     app.getUser().clickOnLoginLink();
     app.getUser().fillLoginForm(User.builder()
         .email("boss@gmail.com")
         .build());
     app.getUser().clickOnLoginButton();
     Assert.assertTrue(
-        app.getUser().isElementPresent(By.xpath("//div[text()='Password is required']")));
+        app.getUser().isPasswordNeeded());
   }
 
-  @Test(priority = 3)
+  @Test(priority = 5)
   public void loginNegativeWithoutEmailAndPasswordTest() {
+    app.getUser().ReloadPage();
     app.getUser().clickOnLoginLink();
     app.getUser().clickOnLoginButton();
-    Assert.assertTrue(app.getUser().isAlertPresent());
+    Assert.assertTrue(app.getUser().isEmailNeeded());
   }
 
-  @Test(priority = 4)
+  @Test(priority = 6)
   public void loginNegativeWrongEmail() {
+    app.getUser().ReloadPage();
     app.getUser().clickOnLoginLink();
     app.getUser().fillLoginForm(User.builder()
         .email("boss1@gmail.com")
         .password("!Boss12345")
         .build());
     app.getUser().clickOnLoginButton();
-    Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//div[@class='Toastify']")));
+    Assert.assertTrue(app.getUser().isToastPresent());
   }
 
-  @Test(priority = 5)
+  @Test(priority = 7)
   public void loginNegativeWrongPassword() {
+    app.getUser().ReloadPage();
     app.getUser().clickOnLoginLink();
     app.getUser().fillLoginForm(User.builder()
         .email("boss@gmail.com")
         .password("!Boss1234")
         .build());
     app.getUser().clickOnLoginButton();
-    Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//div[@class='Toastify']")));
+    Assert.assertTrue(app.getUser().isToastPresent());
   }
 
-  @Test(priority = 6)
+  @Test(priority = 8)
   public void loginNegativeSqlInEmail() {
+    app.getUser().ReloadPage();
     app.getUser().clickOnLoginLink();
     app.getUser().fillLoginForm(User.builder()
         .email("SELECT * from ACCOUNT")
         .password("!Boss12345")
         .build());
     app.getUser().clickOnLoginButton();
-    Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//div[text()='Invalid email']")));
+    Assert.assertTrue(app.getUser().isEmailNotCorrect());
   }
 
-  @Test(priority = 7)
+  @Test(priority = 9)
   public void loginNegativeSqlInPassword() {
+    app.getUser().ReloadPage();
     app.getUser().clickOnLoginLink();
     app.getUser().fillLoginForm(User.builder()
         .email("boss@gmail.com")
         .password("SELECT * from ACCOUNT 1")
         .build());
     app.getUser().clickOnLoginButton();
-    Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//div[@class='Toastify']")));
+    Assert.assertTrue(app.getUser().isToastPresent());
   }
 }

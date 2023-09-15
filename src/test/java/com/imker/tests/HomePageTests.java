@@ -15,6 +15,7 @@ public class HomePageTests extends TestBase {
 
   @Test
   public void HomePageFullLoadedTest() {
+//    app.getHomePage().isElementPresent(By.xpath("//a[contains(text(), 'ber uns')]"));
     Assert.assertTrue(app.getHomePage().isAllHomeComponentsPresents());
   }
 }

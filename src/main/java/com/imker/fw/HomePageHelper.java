@@ -22,7 +22,7 @@ public class HomePageHelper extends BaseHelper {
   }
 
   public boolean isHomeComponentAboutUsPresent() { //ÜBER UNS
-    return isElementPresent(By.xpath("//a[@id='aboutUsHeader']"));
+    return isElementPresent(By.xpath("//a[contains(text(), 'ber uns')]"));
   }
 
   public boolean isHomeComponentGalleryPresent() { //GALERIE

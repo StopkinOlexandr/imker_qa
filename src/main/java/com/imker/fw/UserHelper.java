@@ -27,8 +27,20 @@ public class UserHelper extends BaseHelper {
     return isElementPresent(By.xpath("//span[text()='Alex Krause']"));
   }
 
+  public boolean isPasswordNeeded() {
+    return isElementPresent(By.xpath("//div[text()='Passwort ist erforderlich']"));
+  }
+
+  public boolean isEmailNeeded() {
+    return isElementPresent(By.xpath("//div[contains(text(), 'E-Mail ist erforderlich')]"));
+  }
+
   public void clickOnRegistrationButton() {
     click(By.xpath("//button[normalize-space()='Beitreten']"));
+  }
+
+  public void ReloadPage() {
+    click(By.xpath("//img[@alt='bee']"));
   }
 
   public void fillRegistrationForm(User user) {
@@ -86,7 +98,7 @@ public class UserHelper extends BaseHelper {
 
 
   public void clickSendButton() {
-    click(By.xpath("//button[text()='Send']"));
+    click(By.xpath("//button[text()='Senden Sie']"));
   }
 
   public void clickOnRestorePasswordButton() {
@@ -120,5 +132,13 @@ public class UserHelper extends BaseHelper {
         .until(ExpectedConditions.visibilityOfElementLocated(
             By.xpath("//div[text()='One digit, uppercase letter, one symbol']")));
     return isElementPresent(By.xpath("//div[text()='One digit, uppercase letter, one symbol']"));
+  }
+
+  public boolean isToastPresent() {
+    return isElementPresent(By.xpath("//div[@class='Toastify']"));
+  }
+
+  public boolean isEmailNotCorrect() {
+    return isElementPresent(By.xpath("//div[contains(text(), 'ltige E-Mail')]"));
   }
 }

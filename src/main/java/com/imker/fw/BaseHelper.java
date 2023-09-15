@@ -5,10 +5,12 @@ import java.io.File;
 import java.io.IOException;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -41,6 +43,12 @@ public class BaseHelper {
 
   public void click(By locator) {
     driver.findElement(locator).click();
+  }
+
+  public void jsClick(By locator) {
+    WebElement ele = driver.findElement(locator);
+    JavascriptExecutor executor = (JavascriptExecutor) driver;
+    executor.executeScript("arguments[0].click();", ele);
   }
 
   public boolean isAlertPresent() {
