@@ -1,11 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<!--<suite name="Regression" verbose="1">-->
-<!--  <test name="Regression">-->
-<!--    <classes>-->
-<!--      <class name="com.imker.tests.HomePageTests"/>-->
+<suite name="Regression" verbose="1">
+  <test name="Regression">
+    <classes>
+      <class name="com.imker.tests.HomePageTests"/>
 <!--      <class name="com.imker.tests.CreateAccountTests"/>-->
-<!--      <class name="com.imker.tests.LoginTests">-->
+      <class name="com.imker.tests.LoginTests"/>
+      <class name="com.imker.tests.RestorePasswordTests"/>
+      <class name="com.imker.tests.BlogPageTests"/>
+      <class name="com.imker.tests.ContactPageTests"/>
+      <class name="com.imker.tests.GalerryPageTests"/>
+      <class name="com.imker.tests.PostsPageTests"/>
+      <class name="com.imker.tests.EventsPageTests"/>
+      <class name="com.imker.tests.AdminPageTests"/>
+
 
 <!--        <methods>-->
 <!--          <exclude name=".*Negative.*"></exclude>-->
@@ -19,7 +27,7 @@
 <!--        </methods>-->
 <!--      </class>-->
 <!--      <class name="com.imker.tests.RemoveContactTests"/>-->
-<!--    </classes>-->
-<!--  </test>-->
+    </classes>
+  </test>
 
-<!--</suite>-->
+</suite>
